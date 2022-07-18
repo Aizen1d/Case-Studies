@@ -19,6 +19,7 @@ public class Case2 extends Applet {
     TextField secondInput = new TextField();
     TextField resultOutput = new TextField();
     
+   //storing operation in a variable
     String operation = "";
     
    //array of objects
@@ -30,6 +31,7 @@ public class Case2 extends Applet {
         setSize(400, 250); //re-scale the size of the applet
         setLayout(null);
         
+       //setting up the button
         int buttonPositionX = 0;
         for (Button button: operationButtons) {
             button.setBounds(140 + buttonPositionX, 40, 25, 25);
@@ -42,6 +44,7 @@ public class Case2 extends Applet {
         equalButton.setFocusable(false);
         equalButton.setEnabled(false);
         
+        //setting up the textfields
         int textfieldPositionY = 0;
         for (TextField textfield: textfields) {
             add(textfield).setBounds(10, 10 + textfieldPositionY, 380, 25);
@@ -60,6 +63,8 @@ public class Case2 extends Applet {
         } 
         
         onButton.setEnabled(true);
+        
+       //it handles when the button on is clicked
         onButton.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {
                 for (Button button: miscButtons) {
@@ -124,7 +129,7 @@ public class Case2 extends Applet {
             public void actionPerformed(ActionEvent e) {
                 operation = "Add";
                 
-                //set other buttons to normam color
+                //set other buttons to normal color
                 for (Button button: operationButtons) {
                     button.setBackground(new Color(240, 240, 240));
                 }
@@ -138,7 +143,7 @@ public class Case2 extends Applet {
             public void actionPerformed(ActionEvent e) {
                 operation = "Subtract";
                 
-                //set other buttons to normam color
+                //set other buttons to normal color
                 for (Button button: operationButtons) {
                     button.setBackground(new Color(240, 240, 240));
                 }
@@ -151,7 +156,7 @@ public class Case2 extends Applet {
             public void actionPerformed(ActionEvent e) {
                 operation = "Multiply";
                 
-                //set other buttons to normam color
+                //set other buttons to normal color
                 for (Button button: operationButtons) {
                     button.setBackground(new Color(240, 240, 240));
                 }
@@ -164,7 +169,7 @@ public class Case2 extends Applet {
             public void actionPerformed(ActionEvent e) {
                 operation = "Divide";
                 
-                //set other buttons to normam color
+                //set other buttons to normal color
                 for (Button button: operationButtons) {
                     button.setBackground(new Color(240, 240, 240));
                 }
@@ -180,7 +185,8 @@ public class Case2 extends Applet {
         });
         
     }
-      
+    
+   //handles the computation for each operation
     public void compute(){
         //initializing variables to be used later
         float input1 = 0;
